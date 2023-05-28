@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "YT Song 2 Tab",
+  "description": "Searches for tabs from YT music",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "notifications",
+    "windows",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://music.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/bassHead.png"
+    }
+  }
+}

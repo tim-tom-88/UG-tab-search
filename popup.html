@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        body {
+          width: 300px;
+          height: 600px;
+          font-family:'Courier New', Courier, monospace;
+          background-color: #23242b;
+          color: aliceblue;
+        }
+        h1 {
+          background-image: url('images/bassHead.png'); /* Replace with the path to your icon */
+          background-repeat: no-repeat;
+          background-size: 50px;
+          padding-left: 50px; /* Add space for the icon */
+        }
+        button {
+          background-color: #5a6180; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+        .radio-container {
+          border: 1px solid #000;
+          padding: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+        }
+      </style>
+    </style>
+  </head>
+  <body>
+    <h1>Set Tab Type</h1>
+    <form id="tabTypeForm">
+      <div class="radio-container">
+        <input type="radio" id="official" name="tabType" value="900">
+        <label for="official">Official</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="chords" name="tabType" value="300">
+        <label for="chords">Chords</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="tab" name="tabType" value="200">
+        <label for="tab">Tab</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="guitarPro" name="tabType" value="500">
+        <label for="guitarPro">Guitar Pro</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="power" name="tabType" value="600">
+        <label for="power">Power</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="bass" name="tabType" value="400">
+        <label for="bass">Bass</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="drums" name="tabType" value="700">
+        <label for="drums">Drums</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="video" name="tabType" value="100">
+        <label for="video">Video</label>
+      </div>
+      <div class="radio-container">
+        <input type="radio" id="ukulele" name="tabType" value="800">
+        <label for="ukulele">Ukulele</label>
+      </div>
+      <button type="submit">Set</button>
+    </form>
+    <script src="popup.js"></script>
+  </body>
+</html>
