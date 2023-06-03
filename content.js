@@ -1,16 +1,12 @@
 let lastSongTitle = '';
 
 function checkSongTitle() {
-  try {
-    const songTitleElement = document.querySelector('.title.style-scope.ytmusic-player-bar');
-    const songTitle = songTitleElement?.innerText;
+  const songTitleElement = document.querySelector('.title.style-scope.ytmusic-player-bar');
+  const songTitle = songTitleElement?.innerText;
 
-    if (songTitle && songTitle !== lastSongTitle) {
-      lastSongTitle = songTitle;
-      chrome.runtime.sendMessage({ songTitle });
-    }
-  } catch (error) {
-    chrome.runtime.sendMessage({ error: error.message });
+  if (songTitle && songTitle !== lastSongTitle) {
+    lastSongTitle = songTitle;
+    chrome.runtime.sendMessage({ songTitle });
   }
 }
 
