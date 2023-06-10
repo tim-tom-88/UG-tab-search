@@ -1,6 +1,6 @@
 {
   "name": "YT Song 2 Tab",
-  "version": "2.1",
+  "version": "2.2",
   "description": "Searches for tabs from YT music",
   "manifest_version": 3,
   "content_scripts": [
