@@ -33,8 +33,11 @@ chrome.runtime.onMessage.addListener((request) => {
 
 async function searchSongOnUltimateGuitar(songTitle) {
   try {
+    // Remove any text enclosed in brackets or after brackets
+    const cleanSongTitle = songTitle.replace(/\(.*\)/, '')
+
     // Encoding the song title
-    const encodedSongTitle = encodeURIComponent(songTitle);
+    const encodedSongTitle = encodeURIComponent(cleanSongTitle)
 
     let tabs = await chrome.tabs.query({ url: '*://*.ultimate-guitar.com/*' });
     if (tabs.length > 0) {
