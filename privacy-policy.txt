@@ -1,0 +1,47 @@
+Introduction
+
+Welcome to the Privacy Policy of our Chrome Extension, "YT Song 2 Tab". This policy outlines our practices regarding the collection, use, and disclosure of information that we receive when you use our extension.
+We are committed to protecting and respecting your privacy. We understand that your personal information is important to you, and we appreciate your trust in us.
+This Privacy Policy applies only to the YT Song 2 Tab extension and does not apply to any websites, services or applications that are not owned or controlled by us, even if accessible through our extension. We encourage you to carefully review the privacy policies of any third-party services you access.
+By using our extension, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy.
+
+What Information is Collected
+Our "YT Song 2 Tab" extension is designed with a privacy-first approach and does not collect or store any personal information from its users.
+The extension operates locally on your device and does not transmit data back to us or any third-party entities. It doesn't use cookies or similar tracking technologies and it doesn't collect usage statistics.
+We have no access to your browser history, search history, or any personal data unless explicitly provided by you for customer support or other similar interactions.
+Our extension simply provides functionality as described in the extension details, without gathering or processing any personal data.
+
+
+How the Information is Collected
+N/A
+
+How the Information is Used
+N/A
+
+Information Sharing and Disclosure
+As our "YT Song 2 Tab" extension does not collect any personal data, there is no personal information to share or disclose. We do not sell, trade, or rent your personal data to third parties.
+Also, note that our extension might interact with third-party websites, such as YouTube and Ultimate Guitar. These sites may collect data and use cookies. The data that these third-party sites collect is subject to their own privacy policies. We encourage you to read these policies and understand how your data is used by these sites.
+
+Data Retention
+Our "YT Song 2 Tab" extension does not collect any personal data, and thus there is no data to retain. The extension performs all its functions locally on your device without storing any information.
+However, please be aware that third-party websites, such as YouTube and Ultimate Guitar, which our extension interacts with, may collect and retain data in accordance with their own policies.
+
+Security Measures
+Our "YT Song 2 Tab" extension does not collect or store any personal information, hence there is no personal data at risk.
+The extension operates entirely on your local device and doesn't transmit any data externally. We ensure that our extension is developed in accordance with good development practices and is reviewed and updated regularly to maintain this standard.
+However, it's important to note that no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security.
+As we don't have any control over the websites our extension interacts with (like YouTube and Ultimate Guitar), we highly recommend users to review the security measures of these third-party services to ensure their personal data is secure.
+
+Users’ Rights
+As our "YT Song 2 Tab" extension does not collect or retain any personal data, there are no personal data rights to exercise within the extension itself. However, as users of online services, you have certain rights regarding the collection, use, and protection of your personal data by third-party services. We encourage you to familiarize yourself with and exercise these rights as needed.
+
+Third-Party Services
+Our extension interacts with third-party websites, including but not limited to, YouTube and Ultimate Guitar. We do not control and are not responsible for the privacy practices of these third-party services. When you use our extension, the third-party websites may collect and use your information in accordance with their own privacy policies, which we encourage you to read and understand.
+
+Changes to This Privacy Policy
+We may update our Privacy Policy from time to time as we deem necessary or as required by law. Any changes to this Privacy Policy will be posted on the extension description page, and where appropriate, notified to you by email or when you next start the extension. We encourage you to periodically review this Privacy Policy to stay informed about our practices
+
+Contact Information
+If you have any questions or concerns about this Privacy Policy, please contact us at https://github.com/tim-tom-88/YT2TAB/issues
+
+We will respond to all requests, inquiries, or concerns within a reasonable time frame.
