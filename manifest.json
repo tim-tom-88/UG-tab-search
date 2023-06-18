@@ -5,7 +5,7 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-      "matches": ["*://music.youtube.com/*"],
+      "matches": ["*://music.youtube.com/*", "*://open.spotify.com/", "*://music.apple.com/"],
       "js": ["content.js"]
     }
   ],
