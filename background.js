@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener((request) => {
     chrome.storage.sync.set({ tabType: tabType })
 
     // If Ultimate Guitar tab is open, re-run the search with the new tab type
-    if (lastSongTitle !== '') {
+    if (enabled && lastSongTitle !== '') {
       searchSongOnUltimateGuitar(lastSongTitle)
     }
   }
