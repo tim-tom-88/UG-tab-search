@@ -3,11 +3,15 @@
   "version": "2.2",
   "description": "Searches for tabs from YT music",
   "manifest_version": 3,
-  "content_scripts": [
-    {
-      "matches": ["*://music.youtube.com/*", "*://open.spotify.com/", "*://music.apple.com/"],
-      "js": ["content.js"]
-    }
+    "content_scripts": [
+      {
+        "matches": [
+          "*://music.youtube.com/*",
+          "*://open.spotify.com/*",
+          "*://music.apple.com/*"
+        ],
+        "js": ["content.js"]
+      }
   ],
   "background": {
     "service_worker": "background.js"
