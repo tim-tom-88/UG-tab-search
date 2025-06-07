@@ -34,6 +34,9 @@
           padding: 8px;
           margin-bottom: 6px;
           border-radius: 5px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
         }
         .toggle {
           margin: 10px 0;
@@ -49,42 +52,42 @@
     <h1>Set Tab Type</h1>
     <label class="toggle"><input type="checkbox" id="extensionEnabled"> Extension Enabled</label>
     <form id="tabTypeForm">
-      <div class="radio-container">
+      <label class="radio-container">
         <input type="radio" id="official" name="tabType" value="900">
-        <label for="official">Official</label>
-      </div>
-      <div class="radio-container">
+        Official
+      </label>
+      <label class="radio-container">
         <input type="radio" id="chords" name="tabType" value="300">
-        <label for="chords">Chords</label>
-      </div>
-      <div class="radio-container">
+        Chords
+      </label>
+      <label class="radio-container">
         <input type="radio" id="tab" name="tabType" value="200">
-        <label for="tab">Tab</label>
-      </div>
-      <div class="radio-container">
+        Tab
+      </label>
+      <label class="radio-container">
         <input type="radio" id="guitarPro" name="tabType" value="500">
-        <label for="guitarPro">Guitar Pro</label>
-      </div>
-      <div class="radio-container">
+        Guitar Pro
+      </label>
+      <label class="radio-container">
         <input type="radio" id="power" name="tabType" value="600">
-        <label for="power">Power</label>
-      </div>
-      <div class="radio-container">
+        Power
+      </label>
+      <label class="radio-container">
         <input type="radio" id="bass" name="tabType" value="400">
-        <label for="bass">Bass</label>
-      </div>
-      <div class="radio-container">
+        Bass
+      </label>
+      <label class="radio-container">
         <input type="radio" id="drums" name="tabType" value="700">
-        <label for="drums">Drums</label>
-      </div>
-      <div class="radio-container">
+        Drums
+      </label>
+      <label class="radio-container">
         <input type="radio" id="video" name="tabType" value="100">
-        <label for="video">Video</label>
-      </div>
-      <div class="radio-container">
+        Video
+      </label>
+      <label class="radio-container">
         <input type="radio" id="ukulele" name="tabType" value="800">
-        <label for="ukulele">Ukulele</label>
-      </div>
+        Ukulele
+      </label>
       <button type="submit">Set</button>
     </form>
     <script src="popup.js"></script>
