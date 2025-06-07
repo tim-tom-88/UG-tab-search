@@ -1,22 +1,27 @@
 document.getElementById('tabTypeForm').addEventListener('submit', function(event) {
     event.preventDefault();
-  
+
     const tabType = document.querySelector('input[name="tabType"]:checked').value;
-  
+
     // Store the selected tab type
     chrome.storage.sync.set({ tabType });
-  
+
     // Send the tab type to the background script
     chrome.runtime.sendMessage({ tabType });
-  
+
     // Close the popup
     window.close();
   });
-  
-  // When the popup is loaded, retrieve the stored tab type
-  window.addEventListener('DOMContentLoaded', (event) => {
-    chrome.storage.sync.get('tabType', function(data) {
-      // If a tab type has been stored, set the corresponding radio button to be checked
+
+document.getElementById('extensionEnabled').addEventListener('change', function(event) {
+    const enabled = event.target.checked;
+    chrome.storage.sync.set({ enabled });
+    chrome.runtime.sendMessage({ enabled });
+  });
+
+// When the popup is loaded, retrieve stored settings
+window.addEventListener('DOMContentLoaded', () => {
+    chrome.storage.sync.get(['tabType', 'enabled'], function(data) {
       if (data.tabType) {
         const tabTypeToIdMap = {
           "900": "official",
@@ -31,6 +36,11 @@ document.getElementById('tabTypeForm').addEventListener('submit', function(event
         };
         const correspondingId = tabTypeToIdMap[data.tabType];
         document.getElementById(correspondingId).checked = true;
+      }
+      if (typeof data.enabled !== 'undefined') {
+        document.getElementById('extensionEnabled').checked = data.enabled;
+      } else {
+        document.getElementById('extensionEnabled').checked = true;
       }
     });
   });
