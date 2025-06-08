@@ -1,17 +1,10 @@
-document.getElementById('tabTypeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const tabType = document.querySelector('input[name="tabType"]:checked').value;
-
-    // Store the selected tab type
+document.querySelectorAll('input[name="tabType"]').forEach((el) => {
+  el.addEventListener('change', (event) => {
+    const tabType = event.target.value;
     chrome.storage.sync.set({ tabType });
-
-    // Send the tab type to the background script
     chrome.runtime.sendMessage({ tabType });
-
-    // Close the popup
-    window.close();
   });
+});
 
 document.getElementById('extensionEnabled').addEventListener('change', function(event) {
     const enabled = event.target.checked;

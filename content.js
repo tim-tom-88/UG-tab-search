@@ -1,4 +1,19 @@
 let lastSongTitle = '';
+let enabled = true;
+
+// Get initial enabled state
+chrome.storage.sync.get('enabled', (data) => {
+  if (typeof data.enabled !== 'undefined') {
+    enabled = data.enabled;
+  }
+});
+
+// Listen for changes to the enabled setting
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === 'sync' && changes.enabled) {
+    enabled = changes.enabled.newValue;
+  }
+});
 
 // Function to check for changes in media session metadata
 function checkMediaSessionMetadata() {
@@ -13,7 +28,9 @@ function checkMediaSessionMetadata() {
 
 // Send the song title to the background script
 function sendSongTitle(songTitle) {
-  chrome.runtime.sendMessage({ songTitle });
+  if (enabled) {
+    chrome.runtime.sendMessage({ songTitle });
+  }
 }
 
 // Poll for changes in media session metadata every second
