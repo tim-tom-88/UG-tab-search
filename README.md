@@ -1,6 +1,6 @@
-# 🎸 YT2TAB – Ultimate Guitar Tab Searcher
+# 🎸 UG-tab-search – Ultimate Guitar Tab Searcher
 
-**YT2TAB** is a Chrome extension that seamlessly integrates **Spotify, YTMusic or Apple Music** playback with **Ultimate Guitar** tab searches. Automatically fetch tabs for songs as they play on YouTube with minimal effort.
+**UG-tab-search** is a Chrome extension that seamlessly integrates **Spotify, YTMusic or Apple Music** playback with **Ultimate Guitar** tab searches. Automatically fetch tabs for songs as they play in chrome with minimal effort.
 
 ## 🚀 Features
 
@@ -29,12 +29,12 @@
 
 ## 🤘 Use Cases
 
-- Jamming along to a YouTube playlist? Let YT2TAB keep your tabs ready.
+- Jamming along to a YouTube playlist? Let UG-tab-search keep your tabs ready.
 - Learning a setlist? Automatically get relevant tabs without needing to search manually.
 
 ## 💡 Notes
 
-- YT2TAB relies on YTmusic/Spotify's/Apple Musics metadata for song titles.
+- UG-tab-search relies on YTmusic/Spotify's/Apple Musics metadata for song titles.
 - Results depend on what’s available on Ultimate Guitar.
 - A new UG tab opens only if one isn't already present.
 - THE USER WILL STILL NEED TO SELECT THE APPROPRIATE TAB FROM UG SEARCH RESULTS
