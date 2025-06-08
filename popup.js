@@ -6,10 +6,24 @@ document.querySelectorAll('input[name="tabType"]').forEach((el) => {
   });
 });
 
-document.getElementById('extensionEnabled').addEventListener('change', function(event) {
+const enabledCheckbox = document.getElementById('extensionEnabled');
+const enabledState = document.getElementById('enabledState');
+
+function updateUI(enabled) {
+  enabledState.textContent = enabled ? 'On' : 'Off';
+  enabledCheckbox.checked = enabled;
+  if (enabled) {
+    document.body.classList.remove('disabled');
+  } else {
+    document.body.classList.add('disabled');
+  }
+}
+
+enabledCheckbox.addEventListener('change', function(event) {
     const enabled = event.target.checked;
     chrome.storage.sync.set({ enabled });
     chrome.runtime.sendMessage({ enabled });
+    updateUI(enabled);
   });
 
 // When the popup is loaded, retrieve stored settings
@@ -30,10 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const correspondingId = tabTypeToIdMap[data.tabType];
         document.getElementById(correspondingId).checked = true;
       }
-      if (typeof data.enabled !== 'undefined') {
-        document.getElementById('extensionEnabled').checked = data.enabled;
-      } else {
-        document.getElementById('extensionEnabled').checked = true;
-      }
+      const enabled = (typeof data.enabled !== 'undefined') ? data.enabled : true;
+      updateUI(enabled);
     });
   });

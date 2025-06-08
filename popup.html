@@ -9,18 +9,21 @@
           color: aliceblue;
           padding: 10px;
         }
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
         h1 {
           background-image: url('images/bassHead.png');
           background-repeat: no-repeat;
           background-size: 40px;
           padding-left: 48px;
-          margin-top: 0;
+          margin: 0;
         }
         .radio-container {
-          border: 1px solid #444;
           padding: 8px;
           margin-bottom: 6px;
-          border-radius: 5px;
           display: flex;
           align-items: center;
           cursor: pointer;
@@ -29,9 +32,10 @@
           margin-left: 8px;
         }
         .toggle {
-          margin: 10px 0;
+          margin: 0;
           display: flex;
           align-items: center;
+          cursor: pointer;
         }
         .switch {
           position: relative;
@@ -73,17 +77,22 @@
         input:checked + .slider:before {
           transform: translateX(16px);
         }
+        body.disabled form {
+          display: none;
+        }
       </style>
     </head>
   <body>
-    <h1>Tab Type</h1>
-    <label class="toggle">
-      <span class="switch">
-        <input type="checkbox" id="extensionEnabled">
-        <span class="slider"></span>
-      </span>
-      Extension Enabled
-    </label>
+    <div class="header">
+      <h1>UG Tab Search</h1>
+      <label id="enabledLabel" class="toggle" title="Enable or disable automatic tab search">
+        <span class="switch" title="Enable or disable automatic tab search">
+          <input type="checkbox" id="extensionEnabled">
+          <span class="slider"></span>
+        </span>
+        <span id="enabledState">On</span>
+      </label>
+    </div>
     <form id="tabTypeForm">
       <label class="radio-container">
         <span class="switch">
