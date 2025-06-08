@@ -1,22 +1,34 @@
-document.getElementById('tabTypeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-  
-    const tabType = document.querySelector('input[name="tabType"]:checked').value;
-  
-    // Store the selected tab type
+document.querySelectorAll('input[name="tabType"]').forEach((el) => {
+  el.addEventListener('change', (event) => {
+    const tabType = event.target.value;
     chrome.storage.sync.set({ tabType });
-  
-    // Send the tab type to the background script
     chrome.runtime.sendMessage({ tabType });
-  
-    // Close the popup
-    window.close();
   });
-  
-  // When the popup is loaded, retrieve the stored tab type
-  window.addEventListener('DOMContentLoaded', (event) => {
-    chrome.storage.sync.get('tabType', function(data) {
-      // If a tab type has been stored, set the corresponding radio button to be checked
+});
+
+const enabledCheckbox = document.getElementById('extensionEnabled');
+const enabledState = document.getElementById('enabledState');
+
+function updateUI(enabled) {
+  enabledState.textContent = enabled ? 'On' : 'Off';
+  enabledCheckbox.checked = enabled;
+  if (enabled) {
+    document.body.classList.remove('disabled');
+  } else {
+    document.body.classList.add('disabled');
+  }
+}
+
+enabledCheckbox.addEventListener('change', function(event) {
+    const enabled = event.target.checked;
+    chrome.storage.sync.set({ enabled });
+    chrome.runtime.sendMessage({ enabled });
+    updateUI(enabled);
+  });
+
+// When the popup is loaded, retrieve stored settings
+window.addEventListener('DOMContentLoaded', () => {
+    chrome.storage.sync.get(['tabType', 'enabled'], function(data) {
       if (data.tabType) {
         const tabTypeToIdMap = {
           "900": "official",
@@ -32,6 +44,7 @@ document.getElementById('tabTypeForm').addEventListener('submit', function(event
         const correspondingId = tabTypeToIdMap[data.tabType];
         document.getElementById(correspondingId).checked = true;
       }
+      const enabled = (typeof data.enabled !== 'undefined') ? data.enabled : true;
+      updateUI(enabled);
     });
   });
-  

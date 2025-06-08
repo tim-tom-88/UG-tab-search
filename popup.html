@@ -4,79 +4,160 @@
     <style>
         body {
           width: 300px;
-          height: 600px;
-          font-family:'Courier New', Courier, monospace;
+          font-family: Arial, Helvetica, sans-serif;
           background-color: #23242b;
           color: aliceblue;
+          padding: 10px;
+          background-image: url(images/logo.png);
+          background-blend-mode: darken;
+        }
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 50px
         }
         h1 {
-          background-image: url('images/bassHead.png'); /* Replace with the path to your icon */
-          background-repeat: no-repeat;
-          background-size: 50px;
-          padding-left: 50px; /* Add space for the icon */
-        }
-        button {
-          background-color: #5a6180; /* Green */
-          border: none;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
-          border-radius: 5px;
+          padding-left: 10px;
+          margin: 0;
+          height: fit-content;
         }
         .radio-container {
-          border: 1px solid #000;
-          padding: 10px;
-          margin-bottom: 10px;
-          border-radius: 5px;
+          padding: 8px;
+          margin-bottom: 6px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        .option-name {
+          margin-left: 8px;
+        }
+        .toggle {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 36px;
+          height: 20px;
+          margin-right: 8px;
+        }
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: 0.4s;
+          border-radius: 20px;
+        }
+        .slider:before {
+          position: absolute;
+          content: '';
+          height: 14px;
+          width: 14px;
+          left: 3px;
+          bottom: 3px;
+          background-color: white;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+        input:checked + .slider {
+          background-color: #5a6180;
+        }
+        input:checked + .slider:before {
+          transform: translateX(16px);
+        }
+        body.disabled form {
+          display: none;
         }
       </style>
-    </style>
-  </head>
+    </head>
   <body>
-    <h1>Set Tab Type</h1>
+    <div class="header">
+      <h1>UG Tab Search</h1>
+      <label id="enabledLabel" class="toggle" title="Enable or disable automatic tab search">
+        <span class="switch" title="Enable or disable automatic tab search">
+          <input type="checkbox" id="extensionEnabled">
+          <span class="slider"></span>
+        </span>
+        <span id="enabledState">On</span>
+      </label>
+    </div>
     <form id="tabTypeForm">
-      <div class="radio-container">
-        <input type="radio" id="official" name="tabType" value="900">
-        <label for="official">Official</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="chords" name="tabType" value="300">
-        <label for="chords">Chords</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="tab" name="tabType" value="200">
-        <label for="tab">Tab</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="guitarPro" name="tabType" value="500">
-        <label for="guitarPro">Guitar Pro</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="power" name="tabType" value="600">
-        <label for="power">Power</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="bass" name="tabType" value="400">
-        <label for="bass">Bass</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="drums" name="tabType" value="700">
-        <label for="drums">Drums</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="video" name="tabType" value="100">
-        <label for="video">Video</label>
-      </div>
-      <div class="radio-container">
-        <input type="radio" id="ukulele" name="tabType" value="800">
-        <label for="ukulele">Ukulele</label>
-      </div>
-      <button type="submit">Set</button>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="official" name="tabType" value="900">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Official</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="chords" name="tabType" value="300">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Chords</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="tab" name="tabType" value="200">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Tab</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="guitarPro" name="tabType" value="500">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Guitar Pro</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="power" name="tabType" value="600">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Power</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="bass" name="tabType" value="400">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Bass</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="drums" name="tabType" value="700">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Drums</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="video" name="tabType" value="100">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Video</span>
+      </label>
+      <label class="radio-container">
+        <span class="switch">
+          <input type="radio" id="ukulele" name="tabType" value="800">
+          <span class="slider"></span>
+        </span>
+        <span class="option-name">Ukulele</span>
+      </label>
     </form>
     <script src="popup.js"></script>
   </body>
