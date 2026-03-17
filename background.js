@@ -4,16 +4,19 @@ let enabled = true
 
 // On installation set default tabType
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ tabType: '400', enabled: true }) // set defaults
+  chrome.storage.sync.set({ tabType: '400', enabled: true, lastSongTitle: '' })
 })
 
 // Load stored settings when the extension starts
-chrome.storage.sync.get(['tabType', 'enabled'], function (data) {
+chrome.storage.sync.get(['tabType', 'enabled', 'lastSongTitle'], function (data) {
   if (data.tabType) {
     tabType = data.tabType
   }
   if (typeof data.enabled !== 'undefined') {
     enabled = data.enabled
+  }
+  if (data.lastSongTitle) {
+    lastSongTitle = data.lastSongTitle
   }
 })
 
@@ -21,6 +24,7 @@ chrome.runtime.onMessage.addListener((request) => {
   if (request.songTitle) {
     const songTitle = request.songTitle
     lastSongTitle = songTitle
+    chrome.storage.sync.set({ lastSongTitle })
     if (enabled) {
       searchSongOnUltimateGuitar(songTitle)
     }
